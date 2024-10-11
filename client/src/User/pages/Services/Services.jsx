@@ -1,21 +1,21 @@
-import { motion } from "framer-motion"
-import ServiceCard from './ServiceCard'
-import { MainHeading } from "../../components"
-import { useEffect } from "react"
-import './service.css'
-import { useDispatch, useSelector } from "react-redux"
-import { getServices } from '../../../redux/actions/service'
+import { motion } from "framer-motion";
+import ServiceCard from './ServiceCard';
+import { MainHeading } from "../../components";
+import { useEffect } from "react";
+import './service.css';
+import { useDispatch, useSelector } from "react-redux";
+import { getServices } from '../../../redux/actions/service';
 
 const Services = () => {
 
     ////////////////////////////////////// VARIABLES /////////////////////////////////////////
-    const dispatch = useDispatch()
-    const { services } = useSelector(state => state.service)
+    const dispatch = useDispatch();
+    const { services } = useSelector(state => state.service);
 
     ////////////////////////////////////// USE EFFECTS ///////////////////////////////////////
     useEffect(() => {
-        dispatch(getServices())
-    }, [])
+        dispatch(getServices());
+    }, [dispatch]);
 
     return (
         <motion.section
@@ -34,24 +34,20 @@ const Services = () => {
                 />
             </div>
 
-            <div className="container relative flex flex-wrap md:justify-start justify-center gap-[24px] mt-[3rem] " >
+            <div className="container relative flex flex-wrap md:justify-start justify-center gap-[24px] mt-[3rem]" >
                 {
                     services.map((service, index) => (
-                        <>
-                            <ServiceCard
-                                key={index}
-                                service={service}
-                                index={index}
-                            />
-                        </>
+                        <ServiceCard
+                            key={service.id || index} // Use a unique identifier (preferably 'id') if available
+                            service={service}
+                            index={index}
+                        />
                     ))
                 }
-
             </div>
 
-
         </motion.section>
-    )
+    );
 }
 
-export default Services
+export default Services;

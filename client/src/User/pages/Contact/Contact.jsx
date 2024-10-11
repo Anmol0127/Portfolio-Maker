@@ -65,21 +65,21 @@ const contacts = [
     {
         icon: <Home className="text-[30px] text-orange" />,
         title: 'Address',
-        detail: 'Lahore Pakistan'
+        detail: 'Ambala'
     },
     {
         icon: <Phone className="text-[30px] text-orange" />,
         title: 'Contact Number',
-        detail: '+3055712534'
+        detail: '+919876543210'
     },
     {
         icon: <Mail className="text-[30px] text-orange" />,
         title: 'Email Address',
-        detail: 'naumanch969@gmail.com'
+        detail: 'test@gmail.com'
     },
     {
         icon: <Public className="text-[30px] text-orange" />,
         title: 'Website',
-        detail: 'naumanch.info'
+        detail: 'Nil'
     },
 ]

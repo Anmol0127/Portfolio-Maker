@@ -11,13 +11,13 @@ export const getContactUsers = () => async (dispatch) => {
         dispatch(error(err.message))
     }
 }
-export const formSubmit = () => async (dispatch) => {
+export const formSubmit = (contactData) => async (dispatch) => {
     try {
-        dispatch(start())
-        const { data } = await api.formSubmit()
-        dispatch(formSubmitReducer(data.result))
-        dispatch(end())
+        dispatch(start());
+        const { data } = await api.formSubmit(contactData);  // Ensure contactData is passed here
+        dispatch(formSubmitReducer(data.result));
+        dispatch(end());
     } catch (err) {
-        dispatch(error(err.message))
+        dispatch(error(err.message));
     }
 }

@@ -9,6 +9,7 @@ export const uploadImage = async (req, res, next) => {
         res.status(200).json({ result: imageUrl });
 
     } catch (error) {
+        console.error('Error in uploadImage:', error);
         next(createError(500, error.message));
     }
 }
@@ -26,7 +27,7 @@ export const deleteImage = async (req, res, next) => {
             await fs.unlink(imagePath);
             res.status(200).json({ message: 'Image deleted successfully.' });
         } else {
-            res.status(404).json({ message: 'Image not found.' }); // Change status to 404
+            res.status(404).json({ message: 'Image not found.' });
         }
 
     } catch (error) {

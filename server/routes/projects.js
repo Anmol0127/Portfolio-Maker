@@ -18,7 +18,9 @@ router.get('/get', getProjects)//verifyToken, verifyAdmin,
 router.post('/create', createProject)//verifyToken, verifyAdmin,
 router.put('/update/:projectId', updateProject)//verifyToken, verifyAdmin,
 router.delete('/delete/:projectId', deleteProject)//verifyToken, verifyAdmin,
-
 router.delete('/delete-whole-collection', deleteWholeCollection)
 
-export default router
+export default router;
+
+
+

@@ -1,9 +1,6 @@
 import Projects from "../models/projects.js";
 import { createError } from "../utils/error.js";
 
-
-
-
 export const getProjects = async (req, res, next) => {
     try {
         const result = await Projects.find()

@@ -21,7 +21,6 @@ import testimonialsRoutes from "../routes/testimonials.js"
 import freelancingRoutes from "../routes/freelancing.js"
 import contactRoutes from "../routes/contact.js"
 
-
 const PORT = process.env.PORT || 5000;
 const CONNECTION_URL = process.env.ATLAS_URL
 

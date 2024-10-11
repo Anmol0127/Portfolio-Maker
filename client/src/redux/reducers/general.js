@@ -17,4 +17,4 @@ const generalSlice = createSlice({
 })
 
 export const { start, end, error, uploadImageReducer, deleteImageReducer } = generalSlice.actions
-export default generalSlice.reducer
+export default generalSlice.reducer;

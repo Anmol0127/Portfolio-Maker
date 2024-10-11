@@ -1,7 +1,6 @@
 import Skills from "../models/skills.js";
 import { createError } from "../utils/error.js";
 
-
 export const getSkills = async (req, res, next) => {
     try {
         const result = await Skills.find()
@@ -10,7 +9,6 @@ export const getSkills = async (req, res, next) => {
         next(createError(500, error.message))
     }
 }
-
 
 export const createSkill = async (req, res, next) => {
     try {
@@ -54,8 +52,6 @@ export const deleteSkill = async (req, res, next) => {
         next(createError(500, error.message))
     }
 }
-
-
 
 export const deleteWholeCollection = async (req, res, next) => {
     try {
