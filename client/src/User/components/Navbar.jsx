@@ -114,7 +114,10 @@ const Navbar = ({ navbarMenuRef, showMenu, setShowMenu }) => {
                     <div className="flex justify-between">
                         {loggedUser ? (
                             <div className="flex items-center gap-[1rem]">
-                                <p className="text-[24px] capitalize">{loggedUser?.name?.split(' ')[0]}</p>
+                                <div className="flex flex-col items-center">
+                                    <p className="text-[24px] capitalize">{loggedUser?.name?.split(' ')[0]}</p>
+                                    <p className="text-[16px] capitalize text-green-500">{loggedUser?.status?.split(' ')[0]}</p>
+                                </div>
                                 <div className="relative">
                                     <span onClick={() => { setShowMenu(prev => !prev); }} className="flex justify-center items-center bg-orange rounded-[50%] w-[40px] h-[40px] text-[24px] capitalize cursor-pointer">{loggedUser?.name?.charAt(0)}</span>
                                     {showMenu && (
@@ -123,7 +126,7 @@ const Navbar = ({ navbarMenuRef, showMenu, setShowMenu }) => {
                                             animate={{ x: [100, 0], opacity: [0, 1] }}
                                             className="absolute top-[120%] right-[50%] border-[1px] border-white bg-lightGray p-[12px] gap-[8px] rounded-[4px] flex flex-col"
                                         >
-                                            {loggedUser.role === 'admin' && (
+                                            {loggedUser.role  === 'admin' && (
                                                 <button onClick={switchMode} className="flex gap-[8px] w-full min-w-max hover:bg-darkGray p-[6px] rounded-[4px]">
                                                     <SwitchLeftOutlined className="" />Switch Mode
                                                 </button>

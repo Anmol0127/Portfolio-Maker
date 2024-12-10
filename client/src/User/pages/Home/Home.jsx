@@ -1,17 +1,14 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Button } from "../../components"
 import { profile } from "../../../assets"
 import { Link } from "react-scroll"
 
 const Home = () => {
-
-    ////////////////////////////// VARIABLES //////////////////////////////////////
-
     ////////////////////////////// STATES /////////////////////////////////////////
-
-    ////////////////////////////// USE EFFECTS ////////////////////////////////////
+    const { loggedUser } = useSelector(state => state.user); 
 
     ////////////////////////////// FUNCTIONS ///////////////////////////////////////
-
 
     return (
         <main name="home" className="w-full flex lg:flex-row flex-col gap-[2rem] justify-between lg:p-0 md:p-[1rem] p-[4px] " >
@@ -20,7 +17,7 @@ const Home = () => {
                 <h6 className="text-[20px] font-semibold text-center lg:text-start  uppercase tracking-[3px] text-orange " >Hey</h6>
 
                 <h1 className="md:text-[5.5rem] text-[60px] font-extrabold w-full leading-[1.1em] lg:text-start text-center text-white "  >
-                    I'm <span className="text-orange " >Anshul</span>
+                    I'm <span className="text-orange " >{loggedUser?.name?.split(' ')[0] || 'User'}</span>
                 </h1>
                 <h2 className="lg:text-[35px] text-[30px] font-medium lg:text-start tracking-[3px] text-center text-white " >
                     A Freelance MERN Stack Developer

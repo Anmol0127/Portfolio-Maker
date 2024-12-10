@@ -1,3 +1,5 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { profile } from "../../../assets"
 import { MainHeading, Button } from "../../components"
 import { motion } from "framer-motion"
@@ -7,6 +9,7 @@ const About = () => {
     /////////////////////////////////////////////////////////////// VARIABLES ///////////////////////////////////////////////////////////////////////
 
     /////////////////////////////////////////////////////////////// STATES //////////////////////////////////////////////////////////////////////////
+    const { loggedUser } = useSelector(state => state.user); // Fetch user details from Redux state
 
     /////////////////////////////////////////////////////////////// USE EFFECTS /////////////////////////////////////////////////////////////////////
 
@@ -37,14 +40,14 @@ const About = () => {
                         detail={`
                         Greetings,
                         <br/>
-I'm Anshul, a seasoned MERN stack developer with a passion for crafting exceptional digital experiences. With over a year of dedicated experience, I've had the privilege of working on a diverse range of projects. These include comprehensive full-stack web applications and meticulously designed RESTful APIs, all powered by technologies like MongoDB, Express.js, React.js, and Node.js.
+I'm ${loggedUser?.name || 'User'}, a seasoned MERN stack developer with a passion for crafting exceptional digital experiences. With over a year of dedicated experience, I've had the privilege of working on a diverse range of projects. These include comprehensive full-stack web applications and meticulously designed RESTful APIs, all powered by technologies like MongoDB, Express.js, React.js, and Node.js.
                         <br/>
 My commitment to continuous learning keeps me at the forefront of industry trends. I thrive on exploring new horizons in technology and contributing to open-source projects. Being an active part of coding communities brings me joy and enriches my knowledge.
                         <br/>
 I sincerely appreciate your presence on my portfolio. Whether you have inquiries or a collaborative project in mind, please don't hesitate to reach out. Together, we can shape the future of the digital landscape.
                         <br/>
 Best regards,
-Anshul
+${loggedUser?.name || 'User'}
 
                         `}
                         alignStart

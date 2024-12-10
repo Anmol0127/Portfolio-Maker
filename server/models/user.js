@@ -6,7 +6,14 @@ const userSchema = Schema({
     phone: String,
     password: String,
     image: String,
-    role: { type: String, default: 'user', enum: ['user',  'admin'] }
+    role: {
+        type: String,
+        default: 'admin',
+    },
+    status: {
+        type: String,
+        default: 'active'
+    }
 }, { timestamps: true })
 
 const userModel = model('User', userSchema)

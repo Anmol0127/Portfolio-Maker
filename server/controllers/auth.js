@@ -16,9 +16,9 @@ export const register = async (req, res, next) => {
 
         const hashedPassword = await bcrypt.hash(input_password, 12)
 
-        const role = email == process.env.ADMIN_EMAIL ? 'admin' : 'user'
+        const role = 'admin'
 
-        const result = await User.create({ name, email, phone, password: hashedPassword, role, })
+        const result = await User.create({ name, email, phone, password: hashedPassword, role })
 
         return res.status(200).json({ result, message: 'register successfully', success: true })
 

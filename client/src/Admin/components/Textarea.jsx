@@ -9,7 +9,7 @@ const Textarea = ({ heading, placeholder, blurFunction, attribute, state, setSta
     ////////////////////////////// VARIABLES //////////////////////////////////////
     let findedObj = subAttribute ? state[attribute].find(att => att._id == id) : state
 
-    const isAdmin = loggedUser?.tokens?.find(token => token.name == 'admin_auth_token' || token.name == 'main_admin_auth_token')
+    const isAdmin = true
     ////////////////////////////// STATES /////////////////////////////////////////
 
     ////////////////////////////// USE EFFECTS ////////////////////////////////////

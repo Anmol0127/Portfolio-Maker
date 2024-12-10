@@ -4,6 +4,7 @@ import { start, end, error, registerReducer, loginReducer, logoutReducer, getUse
 
 
 export const register = (userData, navigate) => async (dispatch) => {
+    console.log('Register userData:', userData)
     try {
         dispatch(start())
         const { data } = await api.register(userData)
@@ -16,6 +17,7 @@ export const register = (userData, navigate) => async (dispatch) => {
     }
 }
 export const login = (userData, navigate) => async (dispatch) => {
+    console.log('Login userData:', userData)
     try {
         dispatch(start())
         const { data } = await api.login(userData)
@@ -31,7 +33,7 @@ export const logout = () => async (dispatch) => {
     try {
         dispatch(start())
         dispatch(logoutReducer())
-        Cookies.remove('iamnauman_profile')
+        Cookies.remove('profile')
         dispatch(end())
     }
     catch (err) {

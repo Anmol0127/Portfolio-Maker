@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 const API = axios.create({ baseURL })
 
 axios.interceptors.request.use(req => {
-    // const tokenString = Cookies.get('iamnauman_profile')
+    // const tokenString = Cookies.get('profile')
     // if (tokenString) {
     //     const parsedToken = JSON.parse(tokenString)
     //     req.headers.authtoken = parsedToken

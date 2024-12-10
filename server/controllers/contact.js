@@ -47,7 +47,7 @@ export const formSubmit = async (req, res, next) => {
 
         if (info.accepted.length > 0) {
             const result = await Contact.create({ name, email, subject, message });
-            res.status(200).json({ result, success: true, message: 'contact user createad successfully', success: true })
+            res.status(200).json({ result, success: true, message: 'contact user created successfully', success: true })
         }
 
     } catch (error) {

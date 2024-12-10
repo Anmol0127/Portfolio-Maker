@@ -2,7 +2,6 @@ import fs from 'fs';
 import multer from 'multer';
 import path from 'path';
 
-// Ensure 'uploads' directory exists
 const uploadPath = 'uploads';
 if (!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath, { recursive: true });

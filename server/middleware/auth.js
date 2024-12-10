@@ -16,7 +16,7 @@ export const verifyToken = async (req, res, next) => {
     next()
 }
 
-export const verifyAdmin = async (req, res, next) => {
+export const  verifyAdmin = async (req, res, next) => {
     verifyToken(req, res, () => {
         if (req.user.role == 'admin') next()
         else next(createError(401, 'Only admin can access this route'))
